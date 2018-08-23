@@ -1,0 +1,27 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="Graziela" id="insert_veiculo_20180820_2211_00">
+		<comment>Inserindo dados na tabela de veículos</comment>
+	    <insert tableName="veiculo" schemaName="public">
+	    	<column name="id" valueComputed="NEXTVAL('seq_veiculo')" />
+		    <column name="modelo" value="Caminhão baú"/>
+		    <column name="fator_multiplicador" value ="1.0"/>
+		</insert>
+	    <insert tableName="veiculo" schemaName="public">
+	    	<column name="id" valueComputed="NEXTVAL('seq_veiculo')" />
+		    <column name="modelo" value="Caminhão caçamba"/>
+		    <column name="fator_multiplicador" value ="1.05"/>
+		</insert>
+	    <insert tableName="veiculo" schemaName="public">
+			<column name="id" valueComputed="NEXTVAL('seq_veiculo')" />
+		    <column name="modelo" value="Carreta"/>
+		    <column name="fator_multiplicador" value ="1.12"/>
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,45 @@
+<section class="content-header">
+</section>
+<br/>
+<section class="content">
+    <div class="jumbotron welcome-jumbotron">
+        <h1>Bem vindo ao sistema de cálculo de custo do transporte!</h1>
+        <br/>
+        <form name="calculaCustosForm" role="form" novalidate #calculaCustos="ngForm" (ngSubmit)="calcularCusto()">
+            <div class="form-group row">
+                <div class="col-6">
+                    <label for="distanciaPavimentada">Distância em rodovia pavimentada:</label>
+                    <br/>
+                    <input type="number" class="form-control" style="width: 100%;" step="1" min="0" name="distanciaPavimentada" id="distanciaPavimentada" [(ngModel)]="calculoCusto.distanciaPavimentada" required="required">
+                </div>
+                <div class="col-6">
+                    <label for="distanciaNaoPavimentada">Distância em rodovia não pavimentada:</label>
+                    <br/>
+                    <input type="number" class="form-control" style="width: 100%;" step="1" min="0" name="distanciaNaoPavimentada" id="distanciaNaoPavimentada" [(ngModel)]="calculoCusto.distanciaNaoPavimentada" required="required">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-6">
+                    <label for="veiculo">Veículo utilizado:</label>
+                    <br/>
+                    <select class="form-control" id="veiculo" name="veiculo" [(ngModel)]="calculoCusto.veiculo" required="required">
+                        <option [ngValue]="null" selected>Selecione um veículo</option>
+                        <option [ngValue]="veiculoOption" *ngFor="let veiculoOption of veiculos">{{veiculoOption.modelo}}</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="carga">Carga transportada (Em toneladas):</label>
+                    <br/>
+                    <input type="number" class="form-control" step="1" min="0" name="carga" id="carga" [(ngModel)]="calculoCusto.carga" required="required">
+                </div>
+            </div>
+            <button class="btn btn-success" ng-disabled="calculaCustosForm.$invalid">Calcular custos</button>
+            <br/><br/>
+            <div class="form-group row" *ngIf='calculoCusto.custoTransporte != null'>
+                <div class="col-12">
+                    <label for="veiculo">Custo total gasto: R$ </label>&nbsp;<span>{{calculoCusto.custoTransporte}}</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
