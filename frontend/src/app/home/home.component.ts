@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
     this.calculoCustoService.calculoCusto(this.calculoCusto)
       .subscribe( data => {
         this.calculoCusto = data;
+        console.log(this.calculoCusto.veiculo);
       })
     ;
   }
