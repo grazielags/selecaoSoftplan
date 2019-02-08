@@ -3,7 +3,7 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/selecao
+    url: jdbc:postgresql://localhost:5433/trier
     username: postgres
     password: postgres
     driverClassName: org.postgresql.Driver
@@ -26,4 +26,4 @@ info:
   version: '@project.version@'
 databaseChangeLog:
    includeAll:
-       path: classpath*:src/main/java/selecao/liquibase/
+       path: classpath*:src/main/java/controleAtividades/liquibase/

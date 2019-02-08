@@ -5,7 +5,8 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-	<include relativeToChangelogFile="true" file="create_sequence_atividade_20190131_200400.xml"/>
-	<include relativeToChangelogFile="true" file="create_table_atividade_20190131_200500.xml"/>
-
+	<changeSet id="createSequence-atividade-201901312006-0" author="graziela">
+	    <createSequence sequenceName="seq_atividade" incrementBy="1" maxValue="9223372036854775807" startValue="1"/>
+	</changeSet>
+	
 </databaseChangeLog>

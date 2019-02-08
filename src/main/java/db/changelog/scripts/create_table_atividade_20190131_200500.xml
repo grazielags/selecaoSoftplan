@@ -1,0 +1,33 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="create-atividade-201901312007-0" author="graziela">
+		<comment>Criando a tabela de atividade</comment>
+		<createTable tableName="atividade">
+			<column name="id" type="bigint" valueComputed ="seq_atividade.NEXTVAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+			<column name="titulo" type="java.sql.Types.VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="descricao" type="java.sql.Types.VARCHAR(255)">
+				<constraints nullable="true" />
+			</column>
+			<column name="tipo" type="java.sql.Types.VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="201902032010-0" author="graziela">
+		<addColumn tableName="atividade">
+			<column name="concluida" type="java.sql.Types.BOOLEAN">
+				<constraints nullable="false" />
+			</column>
+	    </addColumn>
+	</changeSet>
+	
+</databaseChangeLog>
